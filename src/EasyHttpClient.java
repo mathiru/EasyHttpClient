@@ -80,7 +80,7 @@ import org.apache.http.protocol.HttpContext;
  *  </code>
  * 
  * @author match2blue software development GmbH
- * @author RenŽ Fischer, Ulrich Scheller
+ * @author Renï¿½ Fischer, Ulrich Scheller
  */
 public class EasyHttpClient extends DefaultHttpClient {
 	/**
@@ -206,21 +206,12 @@ class GzipEntityWrapper extends HttpEntityWrapper {
 	public InputStream getContent() throws IOException, IllegalStateException {
 		return new GZIPInputStream(wrappedEntity.getContent());
 	}
-
-	@Override
-	public long getContentLength() {
-		return -1; // unknown
-	}
 }
 
 
 /**
  * This socket factory will create ssl socket that accepts self signed
  * certificate
- * 
- * @author olamy
- * @version $Id: EasySSLSocketFactory.java 765355 2009-04-15 20:59:07Z evenisse$
- * @since 1.2.3
  */
 class EasySSLSocketFactory implements SocketFactory, LayeredSocketFactory {
 	private SSLContext sslcontext = null;
